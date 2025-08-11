@@ -1,0 +1,32 @@
+name: Deploy Static Website to Azure Blob Storage
+
+on:
+  push:
+    branches:
+      - main # This pipeline runs on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Log in to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy to Azure Storage
+      run: |
+        az storage blob upload-batch \
+          --account-name tanushreestorage123 \
+          --source ./src \
+          --destination '$web' \
+          --overwrite
+      
+    - name: Azure logout
+      run: |
+        az logout
+        az cache purge
+        az account clear
