@@ -6,8 +6,6 @@ This project demonstrates a modern, serverless web architecture on Microsoft Azu
 
 The primary goal was to build a hands-on project showcasing skills relevant to Junior Cloud and DevOps roles, including automation, Infrastructure as Code principles (scripted resource creation), and serverless computing.
 
-### 🔴 Live Website URL: [https://tanushreestorage123.z1.web.core.windows.net/](https://tanushreestorage123.z1.web.core.windows.net/)
-
 ---
 
 ## Architecture Diagram
